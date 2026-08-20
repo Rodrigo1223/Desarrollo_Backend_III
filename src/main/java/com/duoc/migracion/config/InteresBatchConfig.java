@@ -37,7 +37,7 @@ public class InteresBatchConfig {
                             RepositoryItemWriter<Interes> interesWriter) {
         return new StepBuilder("interesStep", jobRepository)
                 .<Interes, Interes>chunk(10, transactionManager)
-                .reader(interesReader.itemReaderInteres()) // <-- AQUÍ SE ESTÁ USANDO EL MÉTODO
+                .reader(interesReader.itemReaderInteres())
                 .writer(interesWriter)
                 .build();
     }
